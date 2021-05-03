@@ -41,7 +41,8 @@ end
 
 function [] = plotpHFunction(~,~)
 global gui;
-Vb = str2double(gui.VbEdit.String);
+hold on
+Vb = str2num(gui.VbEdit.String);
 Mb = str2double(gui.MbEdit.String);
 Ma = str2double(gui.MaEdit.String);
 Va = str2double(gui.VaEdit.String);
@@ -54,10 +55,11 @@ end
 
 function [] = plotpOHFunction(~,~)
 global gui;
+hold on
 Vb = str2double(gui.VbEdit.String);
 Mb = str2double(gui.MbEdit.String);
 Ma = str2double(gui.MaEdit.String);
-Va = str2double(gui.VaEdit.String);
+Va = str2num(gui.VaEdit.String);
 pOH = pOHCalculator(Mb,Ma,Vb,Va);
 gui.p = plot(Va, pOH,'r*');
 
